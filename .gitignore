@@ -1,37 +1,47 @@
-HELP.md
-.gradle
+# ---- Compiled class files ----
+*.class
+
+# ---- Build output ----
+target/
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+bin/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# ---- Maven ----
+.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
 
-### VS Code ###
-.vscode/
+# ---- Gradle ----
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# ---- Packages ----
+*.jar
+*.war
+*.ear
+*.nar
+
+# ---- Environment / secrets ----
+.env
+.env.local
+
+# ---- Logs ----
+*.log
+hs_err_pid*
+replay_pid*
+
+# ---- Editor / IDE ----
+.idea/
+*.iml
+*.iws
+.vscode/*
+!.vscode/extensions.json
+.classpath
+.project
+.settings/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
