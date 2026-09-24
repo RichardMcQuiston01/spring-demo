@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sawdust &amp; Co. — Small-batch laser-cut home goods</title>
+    <meta
+      name="description"
+      content="Sawdust & Co. is a small studio making laser-cut and CNC-engraved wood goods for the home, cut and finished in-house."
+    />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body class="min-h-screen bg-brand-50 text-brand-900">
+    <header class="sticky top-0 z-40 border-b border-brand-200/70 bg-brand-50/95 backdrop-blur">
+      <div class="site-container flex items-center justify-between py-4">
+        <a href="/" class="flex items-center gap-2 font-display text-lg font-semibold">
+          <img src="/favicon.svg" alt="" class="h-8 w-8" width="32" height="32" />
+          Sawdust &amp; Co.
+        </a>
+        <nav class="hidden gap-8 sm:flex" aria-label="Primary">
+          <a href="/" class="nav-link" aria-current="page">Home</a>
+          <a href="/#shop" class="nav-link">Shop</a>
+          <a href="/about.html" class="nav-link">About</a>
+          <a href="/contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-300 text-brand-800 sm:hidden"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          data-mobile-menu-button
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+      <nav
+        class="hidden flex-col gap-1 border-t border-brand-200/70 bg-brand-50 px-6 py-3 sm:hidden"
+        aria-label="Primary mobile"
+        data-mobile-menu
+      >
+        <a href="/" class="nav-link py-2" aria-current="page">Home</a>
+        <a href="/#shop" class="nav-link py-2">Shop</a>
+        <a href="/about.html" class="nav-link py-2">About</a>
+        <a href="/contact.html" class="nav-link py-2">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="site-container flex flex-col items-start gap-6 py-20 sm:py-28">
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand-500">
+          Small-batch &middot; made to order
+        </p>
+        <h1 class="max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">
+          Handmade wood goods, cut with precision.
+        </h1>
+        <p class="max-w-xl text-lg text-brand-700">
+          Every piece starts as a design file and ends up on your table — engraved,
+          layered, and finished by hand in a one-room shop.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#shop" class="btn-primary">Shop the collection</a>
+          <a href="/about.html" class="btn-secondary">Our story</a>
+        </div>
+      </section>
+
+      <section id="shop" class="site-container scroll-mt-24 py-16">
+        <div class="mb-10 flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-semibold sm:text-3xl">The collection</h2>
+            <p class="mt-2 text-brand-700">Two pieces, ready to ship this week.</p>
+          </div>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2">
+          <a href="/products/engraved-coaster-set.html" class="card group block overflow-hidden">
+            <img
+              src="/products/coaster-set.svg"
+              alt="Set of four fanned-out engraved oak coasters with a fern motif"
+              class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              width="480"
+              height="360"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold">Engraved Oak Coaster Set</h3>
+              <p class="mt-1 text-sm text-brand-700">Set of 4 &middot; fern motif &middot; cork backing</p>
+              <p class="mt-4 text-lg font-semibold text-brand-800">$32</p>
+            </div>
+          </a>
+
+          <a href="/products/layered-wall-map.html" class="card group block overflow-hidden">
+            <img
+              src="/products/wall-map.svg"
+              alt="Layered laser-cut wood wall art panel depicting a mountain range"
+              class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              width="480"
+              height="360"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold">Layered Wall Map</h3>
+              <p class="mt-1 text-sm text-brand-700">3-layer relief &middot; 18&Prime; &times; 12&Prime; &middot; ready to hang</p>
+              <p class="mt-4 text-lg font-semibold text-brand-800">$68</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="border-y border-brand-200/70 bg-brand-100/50">
+        <div class="site-container grid gap-10 py-16 sm:grid-cols-3">
+          <div>
+            <h3 class="font-semibold text-brand-900">Cut &amp; finished in-house</h3>
+            <p class="mt-2 text-sm text-brand-700">
+              Every design is laid out, cut, and sanded on our own equipment — no
+              outsourced runs.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-brand-900">Responsibly sourced wood</h3>
+            <p class="mt-2 text-sm text-brand-700">
+              We work in FSC-certified oak, walnut, and maple, sourced from
+              domestic mills.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-brand-900">Plastic-free packaging</h3>
+            <p class="mt-2 text-sm text-brand-700">
+              Everything ships in recycled kraft and paper tape — no bubble wrap,
+              no exceptions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-container flex flex-col items-center gap-4 py-20 text-center">
+        <h2 class="text-2xl font-semibold sm:text-3xl">Have a custom idea?</h2>
+        <p class="max-w-md text-brand-700">
+          We take on a handful of custom commissions each month — maps, family
+          crests, house portraits, and more.
+        </p>
+        <a href="/contact.html" class="btn-primary">Get in touch</a>
+      </section>
+    </main>
+
+    <footer class="border-t border-brand-200/70 bg-brand-100/60">
+      <div class="site-container flex flex-col gap-4 py-10 text-sm text-brand-700 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; 2026 Sawdust &amp; Co. — a portfolio demo, not a real store.</p>
+        <nav class="flex gap-6" aria-label="Footer">
+          <a href="/about.html" class="nav-link">About</a>
+          <a href="/contact.html" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <aside class="donate-card" id="donateCard" aria-labelledby="donateCardTitle">
+      <button
+        class="donate-card__dismiss"
+        type="button"
+        aria-label="Dismiss support message"
+        data-donate-dismiss
+      >
+        &times;
+      </button>
+      <h2 class="donate-card__title" id="donateCardTitle">
+        <span class="donate-card__heart" aria-hidden="true">&#9829;</span>
+        Support this project
+      </h2>
+      <p class="donate-card__body">
+        If this app, code, or repository has helped you or someone you know,
+        please consider donating. I appreciate any help to offset the costs of
+        development and/or AI Credits.
+      </p>
+      <div class="donate-card__qr">
+        <img src="/donate.svg" alt="QR code linking to the Stripe donation page" width="180" height="180" />
+      </div>
+      <a
+        class="donate-card__link"
+        href="https://donate.stripe.com/00w5kD3Gj1Xo9v7gVOcs800"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Donate via Stripe, opens in a new tab"
+      >
+        Donate via Stripe <span aria-hidden="true">&rarr;</span>
+      </a>
+    </aside>
+    <link rel="stylesheet" href="/donate-widget.css" />
+    <script src="/donate-widget.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="wallMapTitle">
+  <title id="wallMapTitle">A multi-layer laser-cut wood wall art panel showing a mountain range in silhouette</title>
+  <rect width="480" height="360" fill="#F6F4EF"/>
+  <rect x="70" y="60" width="340" height="240" rx="10" fill="#ECE7DB" stroke="#8A6A44" stroke-width="3"/>
+  <polygon points="70,300 150,170 200,230 260,120 330,240 410,190 410,300" fill="#BFA97E" opacity="0.9"/>
+  <polygon points="70,300 120,220 175,260 240,180 300,260 360,220 410,260 410,300" fill="#8A6A44" opacity="0.95"/>
+  <polygon points="70,300 110,270 160,290 210,265 260,295 320,270 370,290 410,275 410,300" fill="#573F2A"/>
+  <circle cx="330" cy="110" r="22" fill="#D6CBAE" stroke="#6F5336" stroke-width="2"/>
+  <rect x="70" y="60" width="340" height="240" rx="10" fill="none" stroke="#3D2B1C" stroke-width="3"/>
+</svg>

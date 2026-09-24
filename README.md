@@ -152,6 +152,14 @@ Validation failures (`400`) additionally include a `fieldErrors` array of
   with no host-specific assumptions, so the same `docker compose up -d` works
   locally and on a Hostinger KVM VPS.
 
+## Storefront demo (`frontend/`)
+
+This repo also holds a small, self-contained frontend demo — a static
+storefront built with Vite, TypeScript, and Tailwind CSS. It's unrelated to
+the Task API above (no shared backend); it lives in `frontend/` as a second,
+independent portfolio piece. See [`frontend/README.md`](frontend/README.md)
+for details.
+
 ## Buy Me a Coffee
 
 If this app, code, or repository has helped you or someone you know, please consider donating. I appreciate any help to offset the costs of development and/or AI Credits.
