@@ -6,6 +6,7 @@
 - Spring Web, Spring Data JPA, Bean Validation
 - PostgreSQL + Flyway for schema migrations
 - springdoc-openapi (Swagger UI)
+- JUnit 5, Mockito, MockMvc, Testcontainers (PostgreSQL)
 - Docker + Docker Compose
 
 ## Package layout
@@ -19,7 +20,7 @@ com.mcq.taskapi
 ├── service/            TaskService (interface) + impl.TaskServiceImpl
 ├── controller/         TaskController
 ├── exception/          TaskNotFoundException, GlobalExceptionHandler, ErrorResponse
-└── config/             OpenApiConfig
+└── config/             OpenApiConfig, JpaAuditingConfig
 ```
 
 ## Requirements
@@ -30,7 +31,8 @@ To build and run this project outside of Docker, you'll need:
 - **Maven 3.9+** — no wrapper is committed, so install it separately
 - **Docker & Docker Compose** — to run the full stack locally (app + Postgres)
   and to deploy; this is the recommended way to run the project (see
-  [GETTING_STARTED.md](GETTING_STARTED.md))
+  [GETTING_STARTED.md](GETTING_STARTED.md)). The integration tests also use
+  Docker (Testcontainers) and are skipped without it
 - **PostgreSQL 16** — only needed if you're running the app outside Docker;
   Docker Compose provisions this for you otherwise, and Flyway owns the
   schema either way

@@ -13,4 +13,8 @@ public record TaskRequest(
 
         TaskStatus status
 ) {
+
+    public TaskRequest {
+        status = status == null ? TaskStatus.TODO : status;
+    }
 }
