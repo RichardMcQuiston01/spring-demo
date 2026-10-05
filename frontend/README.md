@@ -13,6 +13,7 @@ believable to show rather than lorem ipsum.
 - [Vite](https://vite.dev) (multi-page build, one HTML entry point per page)
 - TypeScript
 - Tailwind CSS v4 (via `@tailwindcss/vite`)
+- Vitest + jsdom for tests
 
 ## Pages
 
@@ -21,6 +22,14 @@ believable to show rather than lorem ipsum.
   product detail pages, each with an "Email to order" link instead of a cart
 - `about.html`
 - `contact.html` — `mailto:` links only, no contact form
+
+## Shared page parts
+
+Pages share their header, footer and donate card through `partials/`. Add
+`<!-- @include header -->` (or `footer`, `donate-card`) to a page and the
+`vite-plugins/htmlPartials.ts` plugin inlines it at build and dev time. New
+`.html` files in the project root or `products/` are picked up as pages
+automatically.
 
 ## Running locally
 
@@ -32,6 +41,7 @@ npm run dev
 Then open the printed local URL. `npm run build` type-checks and produces a
 static `dist/` you can serve from any static host (or the Hostinger static
 site / Node.js hosting tools); `npm run preview` serves that build locally.
+`npm test` runs the unit tests.
 
 ## Notes
 

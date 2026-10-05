@@ -1,18 +1,19 @@
 import { resolve } from 'node:path';
-import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vitest/config';
+import { findHtmlEntries } from './vite-plugins/htmlEntries.ts';
+import { htmlPartials } from './vite-plugins/htmlPartials.ts';
+
+const projectRoot: string = import.meta.dirname;
 
 export default defineConfig({
-  plugins: [tailwindcss()],
+  plugins: [htmlPartials(resolve(projectRoot, 'partials')), tailwindcss()],
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(import.meta.dirname, 'index.html'),
-        about: resolve(import.meta.dirname, 'about.html'),
-        contact: resolve(import.meta.dirname, 'contact.html'),
-        productCoasterSet: resolve(import.meta.dirname, 'products/engraved-coaster-set.html'),
-        productWallMap: resolve(import.meta.dirname, 'products/layered-wall-map.html'),
-      },
+      input: findHtmlEntries(projectRoot, ['.', 'products']),
     },
+  },
+  test: {
+    environment: 'jsdom',
   },
 });

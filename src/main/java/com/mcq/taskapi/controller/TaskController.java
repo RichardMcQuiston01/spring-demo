@@ -56,7 +56,9 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    @Operation(summary = "Fully update a task")
+    @Operation(
+            summary = "Fully update a task",
+            description = "Replaces every field. A status omitted from the request resets to TODO.")
     public ResponseEntity<TaskResponse> updateTask(
             @PathVariable UUID id, @Valid @RequestBody TaskRequest request) {
         return ResponseEntity.ok(taskService.updateTask(id, request));

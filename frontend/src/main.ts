@@ -1,21 +1,10 @@
 import './style.css';
+import { initMobileMenu } from './mobileMenu.ts';
+import { markCurrentNavLink } from './navigation.ts';
 
-function initMobileMenu(): void {
-  const menuButton = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
-  const menuPanel = document.querySelector<HTMLElement>('[data-mobile-menu]');
-
-  if (!menuButton || !menuPanel) {
-    return;
+document.addEventListener('DOMContentLoaded', () => {
+  if (!initMobileMenu(document)) {
+    console.warn('Mobile menu markup was not found on this page, so the menu toggle was not wired up.');
   }
-
-  menuButton.addEventListener('click', () => {
-    const isOpen = menuPanel.classList.contains('hidden');
-    // Tailwind's `hidden` and `flex` utilities both set `display`, so only one
-    // may be present at a time or the cascade order decides which one wins.
-    menuPanel.classList.toggle('hidden', !isOpen);
-    menuPanel.classList.toggle('flex', isOpen);
-    menuButton.setAttribute('aria-expanded', String(isOpen));
-  });
-}
-
-document.addEventListener('DOMContentLoaded', initMobileMenu);
+  markCurrentNavLink(document, window.location.pathname);
+});

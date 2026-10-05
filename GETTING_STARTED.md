@@ -27,10 +27,12 @@ Once running:
 mvn test
 ```
 
-The repository test suite runs against an in-memory H2 database (documented
-fallback — this build environment has no Docker daemon available for
-Testcontainers); the controller test suite uses `MockMvc` against a mocked
-service layer.
+Unit and web-layer tests need nothing else. The repository and service integration tests run
+against a real PostgreSQL started by Testcontainers, so the Flyway migration is validated
+against the entity mapping exactly as in production. They need Docker and are skipped when it
+isn't available.
+
+The storefront demo has its own tests: `cd frontend && npm test`.
 
 ## API reference
 

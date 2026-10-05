@@ -27,12 +27,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public TaskResponse createTask(TaskRequest request) {
         Task task = new Task();
-        task.setTitle(request.title());
-        task.setDescription(request.description());
-        task.setStatus(request.status() != null ? request.status() : TaskStatus.TODO);
-
-        Task savedTask = taskRepository.save(task);
-        return TaskResponse.fromEntity(savedTask);
+        applyRequest(task, request);
+        return saveAndMap(task);
     }
 
     @Override
@@ -50,40 +46,41 @@ public class TaskServiceImpl implements TaskService {
     @Override
     @Transactional(readOnly = true)
     public TaskResponse getTask(UUID id) {
-        Task task = findTaskOrThrow(id);
-        return TaskResponse.fromEntity(task);
+        return TaskResponse.fromEntity(findTaskOrThrow(id));
     }
 
     @Override
     public TaskResponse updateTask(UUID id, TaskRequest request) {
         Task task = findTaskOrThrow(id);
-        task.setTitle(request.title());
-        task.setDescription(request.description());
-        if (request.status() != null) {
-            task.setStatus(request.status());
-        }
-
-        Task savedTask = taskRepository.save(task);
-        return TaskResponse.fromEntity(savedTask);
+        applyRequest(task, request);
+        return saveAndMap(task);
     }
 
     @Override
     public TaskResponse updateTaskStatus(UUID id, TaskStatusUpdateRequest request) {
         Task task = findTaskOrThrow(id);
         task.setStatus(request.status());
-
-        Task savedTask = taskRepository.save(task);
-        return TaskResponse.fromEntity(savedTask);
+        return saveAndMap(task);
     }
 
     @Override
     public void deleteTask(UUID id) {
-        Task task = findTaskOrThrow(id);
-        taskRepository.delete(task);
+        taskRepository.delete(findTaskOrThrow(id));
     }
 
     private Task findTaskOrThrow(UUID id) {
         return taskRepository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
+    }
+
+    private void applyRequest(Task task, TaskRequest request) {
+        task.setTitle(request.title());
+        task.setDescription(request.description());
+        task.setStatus(request.status());
+    }
+
+    // Flushing applies the audited timestamps to the entity before it is mapped to the response.
+    private TaskResponse saveAndMap(Task task) {
+        return TaskResponse.fromEntity(taskRepository.saveAndFlush(task));
     }
 }
